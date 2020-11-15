@@ -21,31 +21,32 @@ const Header = () => {
       <div className="header__search">
         <input className="header__searchInput" type="text" />
         <SearchIcon className="header__searchIcon" />
-        <div className="header__nav">
-          <div className="header__option">
-            <span className="header__optionLineOne">Identifiez-</span>
-            <span className="header__optionLineTwo">vous</span>
-          </div>
+      </div>
 
-          <div className="header__option">
-            <span className="header__optionLineOne">Retours et</span>
-            <span className="header__optionLineTwo">Commandes</span>
-          </div>
-
-          <div className="header__option">
-            <span className="header__optionLineOne">Votre</span>
-            <span className="header__optionLineTwo">Prime</span>
-          </div>
-
-          <Link to="/checkout">
-            <div className="header__optionBasket">
-              <ShoppingBasketIcon />
-              <span className="header__optionLineTwo header__basketCount">
-                {basket?.length}
-              </span>
-            </div>
-          </Link>
+      <div className="header__nav">
+        <div className="header__option">
+          <span className="header__optionLineOne">Identifiez-</span>
+          <span className="header__optionLineTwo">vous</span>
         </div>
+
+        <div className="header__option">
+          <span className="header__optionLineOne">Retours et</span>
+          <span className="header__optionLineTwo">Commandes</span>
+        </div>
+
+        <div className="header__option">
+          <span className="header__optionLineOne">Votre</span>
+          <span className="header__optionLineTwo">Prime</span>
+        </div>
+
+        <Link to="/checkout">
+          <div className="header__optionBasket">
+            <ShoppingBasketIcon />
+            <span className="header__optionLineTwo header__basketCount">
+              {basket?.length}
+            </span>
+          </div>
+        </Link>
       </div>
     </div>
   );
