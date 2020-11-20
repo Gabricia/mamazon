@@ -3,12 +3,11 @@ export const initialState = {
   user: null,
 };
 
-// Selector
+// Reducer to have the amount total of the basket
 export const getBasketTotal = (basket) =>
   basket?.reduce((amount, item) => item.price + amount, 0);
 
 const reducer = (state, action) => {
-  console.log(action);
   switch (action.type) {
     case "ADD_TO_BASKET":
       return {
@@ -28,10 +27,14 @@ const reducer = (state, action) => {
           `Impossible de supprimer le produit (id: ${action.id}) car il n'est plus dans le panier!`
         );
       }
-
       return {
         ...state,
         basket: newBasket,
+      };
+    case "EMPTY_BASKET":
+      return {
+        ...state,
+        basket: [],
       };
     case "SET_USER":
       return {

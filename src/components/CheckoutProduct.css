@@ -2,6 +2,7 @@
   display: flex;
   margin-top: 20px;
   margin-bottom: 20px;
+  border-bottom: 1px solid lightgray;
 }
 
 .checkoutProduct__info {
@@ -20,6 +21,7 @@
   object-fit: contain;
   width: 180px;
   height: 180px;
+  margin-bottom: 10px;
 }
 
 .checkoutProduct__rating {

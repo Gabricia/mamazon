@@ -9,8 +9,7 @@ import { auth } from "../firebase";
 const Header = () => {
   const [{ basket, user }, dispatch] = useStateValue();
 
-
-  //checks if the user is logged in or not, if else, logs out when the user clicks on the greeting.
+  //checks if the user is logged in or not, if else, logs out when the user clicks on the greeting
   const handleAuthenticaton = () => {
     if (user) {
       auth.signOut();
@@ -33,22 +32,23 @@ const Header = () => {
       </div>
 
       <div className="header__nav">
+        {/* if not user, then redirect to login page */}
         <Link to={!user && "/Login"}>
           <div className="header__option" onClick={handleAuthenticaton}>
             <span className="header__optionLineOne">
               {!user ? "Identifiez-vous" : user.email}
             </span>
             <span className="header__optionLineTwo">
-              {!user ? "SignIn" : "SignOut"}
+              {!user ? "Connexion" : "Déconnexion"}
             </span>
           </div>
         </Link>
-
-        <div className="header__option">
-          <span className="header__optionLineOne">Retours et</span>
-          <span className="header__optionLineTwo">Commandes</span>
-        </div>
-
+        <Link to={!user ? "/Login" : "/orders"}>
+          <div className="header__option">
+            <span className="header__optionLineOne">Retours et</span>
+            <span className="header__optionLineTwo">Commandes</span>
+          </div>
+        </Link>
         <div className="header__option">
           <span className="header__optionLineOne">Votre</span>
           <span className="header__optionLineTwo">Prime</span>

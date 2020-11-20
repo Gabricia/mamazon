@@ -51,10 +51,10 @@ const Login = () => {
       </Link>
 
       <div className="login__container">
-        <h1>Sign-in</h1>
+        <h1>S'identifier</h1>
 
         <form>
-          <h5>E-mail</h5>
+          <h5>Adresse E-mail</h5>
           {/* Whenever the value of the textboxes change, we change the value of state */}
           <input
             type="text"
@@ -62,7 +62,7 @@ const Login = () => {
             onChange={(e) => setEmail(e.target.value)}
           />
 
-          <h5>Password</h5>
+          <h5>Mot de passe</h5>
           {/* Whenever the value of the textboxes change, we change the value of state */}
           <input
             type="password"
@@ -75,18 +75,17 @@ const Login = () => {
             onClick={signIn}
             className="login__signInButton"
           >
-            Sign In
+            S'identifier
           </button>
         </form>
 
         <p>
-          By signing-in you agree to the MAMAZON Conditions of Use & Sale.
-          Please see our Privacy Notice, our Cookies Notice and our
-          Interest-Based Ads Notice.
+          En continuant, vous acceptez les conditions d'utilisation et la notice
+          Protection de vos informations personnelles de Mamazon.
         </p>
 
         <button onClick={register} className="login__registerButton">
-          Create your Amazon Account
+          Créer votre compte Mamazon
         </button>
       </div>
     </div>

@@ -30,7 +30,7 @@ const Checkout = () => {
               rating={item.rating}
             />
           ))}
-          <hr />
+
           <div className="checkout__bottomSubtotal">
             <CurrencyFormat
               renderText={(value) => (
